@@ -1,0 +1,59 @@
+[
+    {
+      "_id": 1,
+      "name": "Bruschetta",
+      "description": "Toasted bread with tomatoes and basil",
+      "price": 8.0,
+      "img_name": "pizza.jpg"
+    },
+    {
+      "_id": 2,
+      "name": "Stuffed Mushrooms",
+      "description": "Mushrooms filled with cheese and herbs",
+      "price": 9.0,
+      "img_name": "mushrooms.jpg"
+    },
+    {
+      "_id": 3,
+      "name": "Grilled Salmon",
+      "description": "Served with lemon butter sauce",
+      "price": 18.0,
+      "img_name": "salmon.jpg"
+    },
+    {
+      "_id": 4,
+      "name": "Ribeye Steak",
+      "description": "12oz ribeye with roasted potatoes",
+      "price": 25.0,
+      "img_name": "steak.jpg"
+    },
+    {
+      "_id": 5,
+      "name": "Tiramisu",
+      "description": "Classic Italian layered dessert",
+      "price": 6.0,
+      "img_name": "tiramisu.jpg"
+    },
+    {
+      "_id": 6,
+      "name": "Lava Cake",
+      "description": "Molten chocolate with vanilla ice cream",
+      "price": 7.0,
+      "img_name": "lava-cake.jpg"
+    },
+    {
+      "_id": 7,
+      "name": "Caprese Salad",
+      "description": "Mozzarella, tomatoes, basil, balsamic glaze",
+      "price": 10.0,
+      "img_name": "caprese.jpg"
+    },
+    {
+      "_id": 8,
+      "name": "Shrimp Alfredo",
+      "description": "Pasta with creamy garlic sauce and shrimp",
+      "price": 17.0,
+      "img_name": "shrimp.jpg"
+    }
+  ]
+  

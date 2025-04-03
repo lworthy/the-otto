@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/the-otto/static/css/main.23875ca6.css",
+    "main.js": "/the-otto/static/js/main.b83a0e41.js",
+    "index.html": "/the-otto/index.html",
+    "main.23875ca6.css.map": "/the-otto/static/css/main.23875ca6.css.map",
+    "main.b83a0e41.js.map": "/the-otto/static/js/main.b83a0e41.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23875ca6.css",
+    "static/js/main.b83a0e41.js"
+  ]
+}
