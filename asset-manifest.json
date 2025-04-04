@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/the-otto/static/css/main.2d5d97f1.css",
-    "main.js": "/the-otto/static/js/main.7fc63d66.js",
+    "main.css": "/the-otto/static/css/main.16dc206d.css",
+    "main.js": "/the-otto/static/js/main.74885244.js",
     "index.html": "/the-otto/index.html",
-    "main.2d5d97f1.css.map": "/the-otto/static/css/main.2d5d97f1.css.map",
-    "main.7fc63d66.js.map": "/the-otto/static/js/main.7fc63d66.js.map"
+    "main.16dc206d.css.map": "/the-otto/static/css/main.16dc206d.css.map",
+    "main.74885244.js.map": "/the-otto/static/js/main.74885244.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d5d97f1.css",
-    "static/js/main.7fc63d66.js"
+    "static/css/main.16dc206d.css",
+    "static/js/main.74885244.js"
   ]
 }
