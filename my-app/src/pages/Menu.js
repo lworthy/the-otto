@@ -6,7 +6,7 @@ function Menu() {
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/menu")
+    fetch("https://otto-server-g8hy.onrender.com/api/menu")
       .then((res) => res.json())
       .then((data) => setMenuItems(data))
       .catch((err) => console.error("Failed to fetch menu:", err));

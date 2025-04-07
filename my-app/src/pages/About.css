@@ -1,0 +1,23 @@
+.about-page {
+    padding: 2rem;
+    font-family: 'Georgia', serif;
+    background-color: #f5f5dc;
+    color: #2e2e2e;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-content h1 {
+    color: #d4a373;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
