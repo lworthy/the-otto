@@ -1,0 +1,43 @@
+.add-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff9f4;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .add-form h2 {
+    color: #d4a373;
+    text-align: center;
+  }
+  
+  .add-form input {
+    display: block;
+    width: 100%;
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .add-form button {
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .success {
+    color: green;
+    text-align: center;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  

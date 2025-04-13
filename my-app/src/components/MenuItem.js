@@ -6,9 +6,10 @@ function MenuItem({ name, description, price, image }) {
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <p>{description}</p>
-      <span className="price">${price.toFixed(2)}</span>
+      <p>${parseFloat(price).toFixed(2)}</p>
     </div>
   );
 }
+
 
 export default MenuItem;
