@@ -40,4 +40,9 @@
     color: red;
     text-align: center;
   }
+
+  input[type="file"] {
+    margin-top: 0.5rem;
+  }
+  
   

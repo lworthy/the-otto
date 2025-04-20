@@ -1,0 +1,40 @@
+.edit-form {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    max-width: 500px;
+  }
+  
+  .edit-form h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .edit-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .edit-form input[type="text"],
+  .edit-form input[type="file"],
+  .edit-form input[type="number"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .edit-form button {
+    padding: 0.5rem;
+    font-weight: bold;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .edit-form button:hover {
+    background-color: #222;
+  }
+  
