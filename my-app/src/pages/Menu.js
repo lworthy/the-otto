@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import MenuItem from '../components/MenuItem';
 import AddMenuItem from '../components/AddMenuItem';
-import EditMenuItem from '../components/EditMenuItem'; 
+import EditMenuItem from '../components/EditMenuItem';
 import './Menu.css';
 
 function Menu() {
   const [menuItems, setMenuItems] = useState([]);
-  const [editingIndex, setEditingIndex] = useState(null); 
+  const [editingId, setEditingId] = useState(null);
 
-  // Fetch the menu list
+  // Fetch the menu list from MongoDB
   const refreshMenu = () => {
     fetch("https://otto-server-g8hy.onrender.com/api/menu")
       .then((res) => res.json())
@@ -16,20 +16,20 @@ function Menu() {
       .catch((err) => console.error("Failed to fetch menu:", err));
   };
 
-  // Load once on mount
+  // Load once on component mount
   useEffect(() => {
     refreshMenu();
   }, []);
 
-  // Handle delete request
-  const handleDelete = (index) => {
-    fetch(`https://otto-server-g8hy.onrender.com/api/menu/${index}`, {
+  // Handle delete
+  const handleDelete = (_id) => {
+    fetch(`https://otto-server-g8hy.onrender.com/api/menu/${_id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
       .then(data => {
         if (data.success) {
-          refreshMenu(); // Update the list after delete
+          refreshMenu();
         } else {
           console.error('Delete failed:', data.message);
         }
@@ -37,38 +37,41 @@ function Menu() {
       .catch(err => console.error('Error deleting:', err));
   };
 
-  // Handle edit button click
-  const handleEdit = (index) => {
-    setEditingIndex(index);
+  // Start editing a menu item
+  const handleEdit = (_id) => {
+    setEditingId(_id);
   };
 
+  // Close edit form and refresh menu
   const handleCloseEdit = () => {
-    setEditingIndex(null);
+    setEditingId(null);
+    refreshMenu();
   };
 
   return (
     <div className="menu-page">
       <h1>Menu</h1>
+
+      {/* Add item form */}
       <AddMenuItem onNewItem={refreshMenu} />
 
-      {/* Show Edit Form */}
-      {editingIndex !== null && (
+      {/* Edit item form */}
+      {editingId !== null && (
         <EditMenuItem
-          index={editingIndex}
-          item={menuItems[editingIndex]}
+          item={menuItems.find(item => item._id === editingId)}
           onClose={handleCloseEdit}
           onUpdate={refreshMenu}
         />
       )}
 
+      {/* Menu item list */}
       <div className="menu-grid">
-        {menuItems.map((item, index) => (
+        {menuItems.map((item) => (
           <MenuItem
-            key={index}
-            index={index}
-            {...item}
+            key={item._id}
+            item={item}
             onDelete={handleDelete}
-            onEdit={handleEdit} 
+            onEdit={handleEdit}
           />
         ))}
       </div>

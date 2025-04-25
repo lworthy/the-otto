@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './EditMenuItem.css';
 
-function EditMenuItem({ item, index, onClose, onUpdate }) {
+function EditMenuItem({ item, onClose, onUpdate }) {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -13,9 +13,9 @@ function EditMenuItem({ item, index, onClose, onUpdate }) {
   useEffect(() => {
     if (item) {
       setFormData({
-        name: item.name,
-        description: item.description,
-        price: item.price
+        name: item.name || '',
+        description: item.description || '',
+        price: item.price || ''
       });
     }
   }, [item]);
@@ -37,15 +37,15 @@ function EditMenuItem({ item, index, onClose, onUpdate }) {
     form.append('price', parseFloat(formData.price));
     if (imageFile) form.append('image', imageFile);
 
-    fetch(`https://otto-server-g8hy.onrender.com/api/menu/${index}`, {
+    fetch(`https://otto-server-g8hy.onrender.com/api/menu/${item._id}`, {
       method: 'PUT',
       body: form
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          onUpdate(); // refresh menu list
-          onClose();  // close the form
+          onUpdate();  
+          onClose();   
         } else {
           alert('Failed to update');
         }
@@ -75,7 +75,22 @@ function EditMenuItem({ item, index, onClose, onUpdate }) {
           value={formData.price}
           onChange={handleChange}
         />
-        <input type="file" name="image" onChange={handleFileChange} />
+
+        {/* Show current image preview */}
+        {item?.image && (
+          <div className="image-preview">
+            <p>Current Image:</p>
+            <img src={item.image} alt={item.name} width="200" />
+          </div>
+        )}
+
+        <input
+          type="file"
+          name="image"
+          accept="image/*"
+          onChange={handleFileChange}
+        />
+
         <button type="submit">Save Changes</button>
         <button type="button" onClick={onClose}>Cancel</button>
       </form>
