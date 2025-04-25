@@ -12,9 +12,13 @@ function Menu() {
   const refreshMenu = () => {
     fetch("https://otto-server-g8hy.onrender.com/api/menu")
       .then((res) => res.json())
-      .then((data) => setMenuItems(data))
+      .then((data) => {
+        console.log("Fetched menu data:", data);
+        setMenuItems(data.menu || []);
+      })
       .catch((err) => console.error("Failed to fetch menu:", err));
   };
+  
 
   // Load once on component mount
   useEffect(() => {
