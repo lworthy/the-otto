@@ -80,7 +80,11 @@ function EditMenuItem({ item, onClose, onUpdate }) {
         {item?.image && (
           <div className="image-preview">
             <p>Current Image:</p>
-            <img src={item.image} alt={item.name} width="200" />
+            <img 
+              src={`${process.env.PUBLIC_URL}${item.image}`} 
+              alt={item.name} 
+              width="200" 
+            />
           </div>
         )}
 

@@ -8,7 +8,7 @@ function Menu() {
   const [menuItems, setMenuItems] = useState([]);
   const [editingId, setEditingId] = useState(null);
 
-  // Fetch the menu list from MongoDB
+  // Fetch menu list from MongoDB
   const refreshMenu = () => {
     fetch("https://otto-server-g8hy.onrender.com/api/menu")
       .then((res) => res.json())
