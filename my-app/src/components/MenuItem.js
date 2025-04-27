@@ -5,7 +5,7 @@ function MenuItem({ item, onDelete, onEdit }) {
 
   return (
     <div className="menu-item">
-      {image && <img src={image} alt={name} />}
+      {image && <img src={`${process.env.PUBLIC_URL}${image}`} alt={name} />}
       <h3>{name}</h3>
       <p>{description}</p>
       <p>${price && !isNaN(price) ? parseFloat(price).toFixed(2) : '0.00'}</p>
@@ -16,3 +16,4 @@ function MenuItem({ item, onDelete, onEdit }) {
 }
 
 export default MenuItem;
+
